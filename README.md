@@ -13,3 +13,5 @@ This website is a simple store management system built using HTML, CSS, and Java
 I got the idea for this project from a YouTube channel called Abdelrahman Gamal.
 
 
+## Link
+you can check the final result from this github pages [link](https://saadiael08.github.io/store-management/)
