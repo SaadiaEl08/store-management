@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="head">
+        <h1>CRUDS</h1>
+        <p>Create Read Update Delete Search</p>
+      </div>
+      <div class="inputs">
+        <input type="text" name="title" id="title" placeholder="title" />
+        <div class="prices">
+          <input
+            type="number"
+            onkeyup="calculiTotal()"
+            id="price"
+            name="price"
+            placeholder="price"
+            min="1"
+          />
+          <input
+            type="number"
+            onkeyup="calculiTotal()"
+            id="taxes"
+            name="taxes"
+            placeholder="taxes"
+            min="0"
+          />
+          <input
+            type="number"
+            onkeyup="calculiTotal()"
+            id="ads"
+            name="ads"
+            placeholder="ads"
+            min="0"
+          />
+          <input
+            type="number"
+            onkeyup="calculiTotal()"
+            id="discount"
+            name="discount"
+            placeholder="discount"
+            min="0"
+          />
+          <small id="total"></small>
+        </div>
+        <input
+          type="number"
+          name="count"
+          id="count"
+          placeholder="count"
+          min="1"
+        />
+        <input
+          type="text"
+          name="category"
+          id="category"
+          placeholder="category"
+        />
+        <p><label for="img" style="cursor: pointer;">Upload Image </label></p>
+        <input type="file" id="img" name="img" accept="image/*" hidden onchange="showChosenImg(event)" />
+        <img id="outputImg" width="100" />	
+
+
+        <button id="createBtn" onclick="createProducts()">Create</button>
+        <button id="updateBtn" onclick="update()" class="hidden">Update</button>
+      </div>
+      <div class="search">
+        <input
+          type="text"
+          oninput="searching()"
+          id="search"
+          name="search"
+          placeholder="chose a type to search"
+          disabled
+        />
+        <div class="searchBtn">
+          <button onclick="searchByBtnClick(this)" id="hello1">
+            Search By title
+          </button>
+          <button onclick="searchByBtnClick(this)" id="hello2">
+            Search By Category
+          </button>
+        </div>
+      </div>
+      <div class="deleteAll">
+        <button
+          class="deleteallbtn hidden"
+          id="deleteAll"
+          onclick="deleteAll()"
+        ></button>
+      </div>
+      <table>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>TITLE</th>
+            <th>PRICE</th>
+            <th>TAXES</th>
+            <th>ADS</th>
+            <th>DISCOUNT</th>
+            <th>TOTAL</th>
+            <th>CATEGORY</th>
+            <th>PICTURE</th>
+            <th>UPDATE</th>
+            <th>DELETE</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
